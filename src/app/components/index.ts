@@ -5,3 +5,6 @@ export * from "./Features";
 export * from "./ContactForm";
 export * from "./Footer";
 export * from "./AboutUs";
+export * from "./pricing";
+export * from "./SmoothLink";
+export * from "./brands";

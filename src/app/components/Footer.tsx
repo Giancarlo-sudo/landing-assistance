@@ -1,8 +1,6 @@
-// components/Footer/Footer.tsx
-
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPinCheck, MapPinCheckInside } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,7 +32,7 @@ export const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-hero transition-colors"
                 aria-label="Facebook"
               >
                 <Image
@@ -50,7 +48,7 @@ export const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-hero transition-colors"
                 aria-label="Instagram"
               >
                 <Image
@@ -67,7 +65,7 @@ export const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-hero transition-colors"
                 aria-label="LinkedIn"
               >
                 <Image
@@ -110,7 +108,6 @@ export const Footer = () => {
                   Preguntas Frecuentes
                 </Link>
               </li>
-             
             </ul>
           </div>
 
@@ -151,26 +148,39 @@ export const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-4">Contacto</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                <div className="flex justify-center items-center w-10 h-10 border border-transparent rounded-full shadow-lg bg-gray-800   hover:bg-hero duration-300 ease-in-out transition-all">
+                  <Mail className="w-5 h-5 text-white shrink-0 mt-0.5" />
+                </div>
+
                 <a
                   href="mailto:nazareno@in-order.com.pe"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors h-full my-auto"
                 >
                   nazareno@in-order.com.pe
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                <div className="flex justify-center items-center w-10 h-10 border border-transparent rounded-full shadow-lg bg-gray-800   hover:bg-hero duration-300 ease-in-out transition-all">
+                  <Phone className="w-5 h-5 text-white shrink-0 mt-0.5" />
+                </div>
                 <a
                   href="tel:+51922929616"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors h-full my-auto"
                 >
                   +51 922 929 616
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
-                <span>Lima, Perú</span>
+                <div className="flex justify-center items-center w-10 h-10 border border-transparent rounded-full shadow-lg bg-gray-800   hover:bg-hero duration-300 ease-in-out transition-all">
+                  <Image
+                    src="/image/svg/mapPin.svg"
+                    alt="Map Pin"
+                    width={25}
+                    height={25}
+                    className="brightness-0 invert"
+                  />
+                </div>
+                <span className="h-full my-auto">Lima, Perú</span>
               </li>
             </ul>
           </div>
