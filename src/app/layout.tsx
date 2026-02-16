@@ -20,8 +20,9 @@ export const metadata: Metadata = {
     default: "Kaia - Sistema de Asistencias | Control de Personal Inteligente",
     template: "%s | Kaia",
   },
-  description: "Sistema de asistencias rápido, intuitivo y eficaz para tu empresa. Gestiona asistencias, permisos, vacaciones y genera reportes automatizados. Optimiza el control de personal en Perú.",
-  
+  description:
+    "Sistema de asistencias rápido, intuitivo y eficaz para tu empresa. Gestiona asistencias, permisos, vacaciones y genera reportes automatizados. Optimiza el control de personal en Perú.",
+
   keywords: [
     "sistema de asistencias",
     "control de asistencias",
@@ -32,11 +33,11 @@ export const metadata: Metadata = {
     "control horario empleados",
     "asistencia laboral",
   ],
-  
+
   authors: [{ name: "Kaia" }],
   creator: "Kaia",
   publisher: "Kaia",
-  
+
   robots: {
     index: true,
     follow: true,
@@ -48,38 +49,40 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  
+
   // Open Graph (para redes sociales)
   openGraph: {
     type: "website",
     locale: "es_PE",
-    url: "https://asistencia.ability.com.pe",
+    url: "https://intranet-asistencia.kaia.com.pe",
     siteName: "Kaia",
     title: "Kaia - Sistema de Asistencias | Control de Personal Inteligente",
-    description: "Sistema de asistencias rápido, intuitivo y eficaz. Gestiona asistencias, permisos, vacaciones y reportes automatizados para tu empresa en Perú.",
+    description:
+      "Sistema de asistencias rápido, intuitivo y eficaz. Gestiona asistencias, permisos, vacaciones y reportes automatizados para tu empresa en Perú.",
     images: [
       {
-        url: "https://asistencia.ability.com.pe/logo.webp",
+        url: "https://intranet-asistencia.kaia.com.pe/logo.webp",
         width: 1200,
         height: 630,
         alt: "Kaia - Sistema de Asistencias",
       },
     ],
   },
-  
+
   // Twitter Card
   twitter: {
     card: "summary_large_image",
     title: "Kaia - Sistema de Asistencias | Control de Personal Inteligente",
-    description: "Sistema de asistencias rápido, intuitivo y eficaz para tu empresa. Gestiona asistencias, permisos y vacaciones.",
-    images: ["https://asistencia.ability.com.pe/logo.webp"],
+    description:
+      "Sistema de asistencias rápido, intuitivo y eficaz para tu empresa. Gestiona asistencias, permisos y vacaciones.",
+    images: ["https://intranet-asistencia.kaia.com.pe/logo.webp"],
   },
-  
+
   // Canonical URL
   alternates: {
-    canonical: "https://asistencia.ability.com.pe",
+    canonical: "https://intranet-asistencia.kaia.com.pe",
   },
-  
+
   category: "Business Software",
 };
 
@@ -111,7 +114,8 @@ export default function RootLayout({
                 ratingValue: "4.8",
                 ratingCount: "50",
               },
-              description: "Sistema de asistencias rápido, intuitivo y eficaz para gestionar asistencias, permisos, vacaciones y reportes automatizados.",
+              description:
+                "Sistema de asistencias rápido, intuitivo y eficaz para gestionar asistencias, permisos, vacaciones y reportes automatizados.",
             }),
           }}
         />
@@ -124,8 +128,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Kaia",
-              url: "https://asistencia.ability.com.pe",
-              logo: "https://asistencia.ability.com.pe/logo.webp",
+              url: "https://intranet-asistencia.kaia.com.pe",
+              logo: "https://intranet-asistencia.kaia.com.pe/logo.webp",
               description: "Sistema de asistencias para empresas en Perú",
               address: {
                 "@type": "PostalAddress",
@@ -153,29 +157,30 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Product",
               name: "Kaia - Sistema de Asistencias",
-              image: "https://asistencia.ability.com.pe/logo.webp",
-              description: "Sistema de asistencias rápido, intuitivo y eficaz para tu empresa. Gestiona asistencias, permisos, vacaciones y genera reportes automatizados.",
+              image: "https://intranet-asistencia.kaia.com.pe/logo.webp",
+              description:
+                "Sistema de asistencias rápido, intuitivo y eficaz para tu empresa. Gestiona asistencias, permisos, vacaciones y genera reportes automatizados.",
               brand: {
                 "@type": "Brand",
                 name: "Kaia",
               },
               offers: {
                 "@type": "Offer",
-                url: "https://asistencia.ability.com.pe",
+                url: "https://intranet-asistencia.kaia.com.pe",
                 priceCurrency: "PEN",
                 availability: "https://schema.org/InStock",
               },
             }),
           }}
         />
-        
+
         {/* Favicon y App Icons */}
         <link rel="icon" href="/image/logo/logo.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/image/logo/logo.ico" />
-        
+
         {/* Theme color */}
         <meta name="theme-color" content="#212120" />
-        
+
         {/* Geo tags para SEO local */}
         <meta name="geo.region" content="PE-LIM" />
         <meta name="geo.placename" content="Lima" />
