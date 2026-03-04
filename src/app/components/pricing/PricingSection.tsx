@@ -14,10 +14,8 @@ export const PricingSection = ({ plans }: Props) => {
 
   return (
     <Fragment>
-      {/* Toggle Mensual/Anual */}
       <PricingToggle period={period} onChange={setPeriod} />
 
-      {/* Grid de planes */}
       <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
         {plans.map((plan) => (
           <PricingCard key={plan.id} plan={plan} period={period} />

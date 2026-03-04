@@ -1,98 +1,127 @@
+"use client";
+
 import Image from "next/image";
-import { AwardsCarousel } from "./brands";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle, ChevronDown } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { slides, highlights } from "../data";
 
 export const Hero = () => {
-  /* return (
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  return (
     <section
-      className="w-full px-6 py-12 pb-0 hero-gradient rounded-b-3xl"
-      id="home"
+      id="inicio"
+      className="relative flex flex-col items-center justify-center gradient-mask-bottom"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 sm:gap-12 lg:gap-0 items-center">
-        <div className="space-y-6">
-          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Organiza y Simplifica la Gestión de Asistencias
-          </h2>
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none z-1"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, hsl(217 60% 80% / 0.12) 0%, hsl(187 94% 30% / 0.06) 40%, transparent 70%)",
+        }}
+      />
 
-          <p className="text-lg text-gray-600 max-w-lg">
-            Registra automáticamente las asistencias de tu equipo, gestiona
-            permisos y vacaciones, y genera reportes detallados en segundos.
-          </p>
+      <div className="container relative z-10 mx-auto px-6 lg:px-8 text-center my-16  ">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="max-w-3xl mx-auto"
+          >
+            <h3 className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1] mb-6 text-white">
+              {slides[current].headline}
+            </h3>
+            <p className="text-base max-w-xl mx-auto mb-10 leading-relaxed text-white">
+              {slides[current].subtitle}
+            </p>
+          </motion.div>
+        </AnimatePresence>
 
-          <div className="flex items-center gap-4">
-            <button className="bg-black text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
-              Comenzar Gratis
-            </button>
+        <div className="mt-6 flex flex-col items-center">
+          <div className="flex items-center justify-center gap-4 text-white">
+            <a
+              href="#"
+              className="inline-flex items-center px-6 py-3 text-sm font-medium bg-gradient-accent rounded-lg glow-blue hover:opacity-90 transition-opacity duration-200"
+            >
+              Comenzar ahora
+            </a>
+            <a
+              href="#"
+              className="inline-flex gap-1 items-center px-6 py-3 text-sm font-medium hover:text-gray-900 hover:bg-white rounded-full transition-colors duration-200"
+            >
+              <span>Ver demo</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </div>
 
-            <button className="flex items-center gap-2 text-gray-700 hover:text-gray-900 text-sm font-medium group">
-              Explorar Funciones
-              <svg
-                className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+          <div
+            className="flex items-center justify-center gap-6 text-xs text-white animate-fade-up mt-8"
+            style={{ animationDelay: "400ms" }}
+          >
+            {highlights.map((h) => (
+              <span key={h} className="flex items-center gap-1.5">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                {h}
+              </span>
+            ))}
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <div className="flex items-center gap-2">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  i === current
+                    ? "bg-gray-700 w-6"
+                    : "bg-gray-500 hover:bg-gray-600"
+                }`}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative w-full mt-10 max-w-5xl mx-auto">
+          <div className="absolute inset-0 z-10 pointer-events-none bg-linear-to-t from-background via-background/60 to-transparent rounded-lg" />
+
           <Image
-            src="/image/hero/mockup-left-phone.png"
-            alt="Kaia - Sistema de Asistencias"
-            width={300}
-            height={450}
-            className="w-64 md:w-80 lg:w-96 h-auto"
-            priority
+            src="/image/faqs/faqs.png"
+            alt="Dashboard de Kaia"
+            width={1200}
+            height={700}
+            className="w-full h-auto rounded-xl"
           />
         </div>
       </div>
-    </section>
-  ); */
 
-  return (
-    <section className="bg-slate-50 w-full px-6 py-14 pb-0 hero-gradient rounded-b-xl">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col bg-linear-to-br from-[#b3c294] to-[#7a6b4f] bg-clip-text text-transparent font-playfair">
-            <h2 className="text-5xl lg:text-6xl font-bold leading-normal">
-              Organiza y Simplifica
-            </h2>
-            <h2 className="text-5xl lg:text-6xl font-bold">
-              la Gestión de Asistencias
-            </h2>
-          </div>
-          <div className="w-full">
-            <p className="text-base text-gray-600 max-w-lg mt-4 leading-tight">
-              Tu equipo registra asistencias en segundos, tú obtienes reportes
-              al instante
-            </p>
-          </div>
-          <div className="flex">
-            <button className="bg-[#f2f2f2] px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#333333] hover:text-white hover:border-transparent transition-colors duration-300 ease-in-out">
-              Explorar Funciones
-            </button>
-            <button className="bg-[#333333] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#f2f2f2] hover:text-[#333333] hover:border-transparent transition-colors duration-300 ease-in-out">
-              Comenzar Gratis
-            </button>
-          </div>
-          <div className="relative w-full h-full mt-4">
-            <Image
-              src="/image/faqs/faqs.png"
-              alt="Dashboard de Kaia"
-              width={400}
-              height={500}
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-          <AwardsCarousel />
-        </div>
+      <div
+        className="absolute -bottom-10 left-0 right-0 h-40 z-20 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to top, white 0%, rgba(255,255,255,0.10) 50%, transparent 100%)",
+        }}
+      />
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <a href="#caracteristicas" aria-label="Scroll down">
+          <ChevronDown className="w-5 h-5  animate-bounce-subtle" />
+        </a>
       </div>
     </section>
   );

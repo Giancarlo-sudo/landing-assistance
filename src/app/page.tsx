@@ -11,9 +11,11 @@ import { FAQ } from "./components/FAQs";
 
 export default function Home() {
   return (
-    <div className="w-full h-full" id="home">
-      <Header />
-      <Hero />
+    <div className="w-full h-full font-inter" id="home">
+      <div className="min-h-screen bg-background relative">
+        <Header />
+        <Hero />
+      </div>
       <AboutUs />
       <PricingPage />
       <Features />

@@ -39,20 +39,19 @@ export const AwardsCarousel = () => {
             delay: 2000,
             disableOnInteraction: false,
           }}
-          speed={8000} // MUY lento (8 segundos por transición)
-          allowTouchMove={false} // Desactiva el drag manual
+          speed={8000}
+          allowTouchMove={false}
           breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
+            320: { slidesPerView: 2 },
+            768: { slidesPerView: 4 },
             1024: { slidesPerView: 4 },
             1280: { slidesPerView: 5 },
           }}
           className="overflow-visible flex justify-center items-center"
         >
-          {/* Duplica los logos para scroll infinito suave */}
-          {[...logos, ...logos, ...logos].map((brand, index) => (
+          {[...logos, ...logos].map((brand, index) => (
             <SwiperSlide key={index}>
-              <div className="rounded-lg w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+              <div className="rounded-lg w-24 h-12 lg:w-32 lg:h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
                 <div className="text-center">
                   <img
                     src={brand.logo}

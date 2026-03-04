@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistInter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -94,7 +100,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        {/* Schema.org JSON-LD para rich snippets */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -120,7 +125,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Schema para la organización */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -149,7 +153,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Schema para el producto */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -174,21 +177,16 @@ export default function RootLayout({
           }}
         />
 
-        {/* Favicon y App Icons */}
         <link rel="icon" href="/image/logo/logo.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/image/logo/logo.ico" />
-
-        {/* Theme color */}
         <meta name="theme-color" content="#212120" />
-
-        {/* Geo tags para SEO local */}
         <meta name="geo.region" content="PE-LIM" />
         <meta name="geo.placename" content="Lima" />
         <meta name="geo.position" content="-12.046374;-77.042793" />
         <meta name="ICBM" content="-12.046374, -77.042793" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistInter.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
