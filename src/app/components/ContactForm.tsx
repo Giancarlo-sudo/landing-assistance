@@ -40,8 +40,6 @@ export const ContactForm = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      console.log("Formulario enviado:", formData);
-
       setSubmitSuccess(true);
       setFormData({
         name: "",
@@ -52,7 +50,6 @@ export const ContactForm = () => {
         message: "",
       });
 
-      // Ocultar mensaje de éxito después de 5 segundos
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error("Error al enviar:", error);
@@ -62,15 +59,11 @@ export const ContactForm = () => {
   };
 
   return (
-    <section
-      className="w-full py-16 bg-linear-to-r from-white from-40% via-sky-50/10 to-sky-50 shadow-md"
-      id="contact"
-    >
+    <section className="w-full py-16 bg-white" id="contact">
       <div className="max-w-7xl mx-auto flex flex-col">
         <BagTitle icon={Contact} title="Contacto" />
 
         <div className="flex flex-col gap-12">
-          {/* Título */}
           <div className="text-center max-w-3xl flex flex-col justify-center items-center mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               ¿Listo para transformar tu gestión?
@@ -81,12 +74,9 @@ export const ContactForm = () => {
             </p>
           </div>
 
-          {/* Grid de 2 columnas */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            {/* Columna Izquierda - Formulario */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 px-4 lg:px-0">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Nombre */}
                 <div>
                   <label
                     htmlFor="name"
@@ -110,7 +100,6 @@ export const ContactForm = () => {
                   )}
                 </div>
 
-                {/* Email y Teléfono */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label
@@ -163,7 +152,6 @@ export const ContactForm = () => {
                   </div>
                 </div>
 
-                {/* Mensaje */}
                 <div>
                   <label
                     htmlFor="message"
@@ -182,7 +170,6 @@ export const ContactForm = () => {
                   />
                 </div>
 
-                {/* Botón Submit */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -201,18 +188,15 @@ export const ContactForm = () => {
                   )}
                 </button>
 
-                {/* Mensaje de éxito */}
                 {submitSuccess && (
                   <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-                    ✅ ¡Mensaje enviado! Nos contactaremos contigo pronto.
+                    ¡Mensaje enviado! Nos contactaremos contigo pronto.
                   </div>
                 )}
               </form>
             </div>
 
-            {/* Columna Derecha - Información de Contacto */}
             <div className="space-y-8">
-              {/* Datos de contacto */}
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
                   Contacto directo
@@ -262,7 +246,6 @@ export const ContactForm = () => {
                 </div>
               </div>
 
-              {/* Horario */}
               <div className="bg-hero/10 rounded-2xl p-6 border border-sky-100">
                 <div className="text-sm text-gray-600 flex flex-col gap-1">
                   <span className="font-bold text-gray-900 uppercase text-sm">

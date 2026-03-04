@@ -13,7 +13,7 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="w-full px-6 py-16 bg-white" id="faqs">
+    <section className="w-full px-6 py-16 bg-slate-50" id="faqs">
       <div className="max-w-7xl mx-auto">
         <BagTitle
           icon={MessageCircleQuestionIcon}

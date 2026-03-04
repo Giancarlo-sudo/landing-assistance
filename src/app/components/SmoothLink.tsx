@@ -4,17 +4,20 @@ interface Props {
   href: string;
   children: React.ReactNode;
   className?: string;
-  offset?: number; // Offset para header fijo
+  offset?: number;
+  onClick?: () => void;
 }
 
 export default function SmoothLink({
   href,
   children,
   className,
-  offset = 60, // Altura del header
+  offset = 60,
+  onClick,
 }: Props) {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    onClick?.();
 
     const target = document.querySelector(href);
 

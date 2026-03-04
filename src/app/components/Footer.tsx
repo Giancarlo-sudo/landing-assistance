@@ -7,10 +7,8 @@ export const Footer = () => {
 
   return (
     <footer className="w-full bg-[#212020] text-gray-300">
-      {/* Contenido principal del footer */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Columna 1: Logo + Descripción */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
@@ -26,7 +24,6 @@ export const Footer = () => {
               control de tu equipo con tecnología moderna y eficiente.
             </p>
 
-            {/* Redes sociales */}
             <div className="flex items-center gap-4 pt-2">
               <Link
                 href="https://facebook.com"
@@ -80,7 +77,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Columna 2: Producto */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Producto</h3>
             <ul className="space-y-3">
@@ -111,7 +107,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Columna 3: Empresa */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Empresa</h3>
             <ul className="space-y-3">
@@ -143,7 +138,6 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Columna 4: Contacto */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Contacto</h3>
             <ul className="space-y-4">
@@ -187,16 +181,13 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Barra inferior */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* Copyright */}
             <p className="text-sm text-gray-400">
               © {currentYear} Kaia. Todos los derechos reservados.
             </p>
 
-            {/* Links legales */}
             <div className="flex items-center gap-6 text-sm">
               <Link
                 href="/privacidad"

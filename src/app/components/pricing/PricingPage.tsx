@@ -2,10 +2,16 @@ import { getPublicPlans } from "@/app/lib";
 import { PricingSection } from "./PricingSection";
 import { HandCoins } from "lucide-react";
 import { BagTitle } from "../ui";
+import { Plan } from "@/app/types";
 
 export const PricingPage = async () => {
-  const { data: plans } = await getPublicPlans();
-
+  let plans: Plan[] = [];
+  try {
+    const { data } = await getPublicPlans();
+    plans = data;
+  } catch {
+    plans = [];
+  }
   return (
     <section className="min-h-screen bg-gray-50" id="plan">
       <div className="max-w-7xl mx-auto px-4 py-16">

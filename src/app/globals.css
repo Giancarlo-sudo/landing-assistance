@@ -1,16 +1,32 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 
 :root {
-  --background: #ffffff;
   --foreground: #171717;
-  --hero: #b3c294;
-  --title-hero: #5e6946;
   --font-crimson: "Crimson Text", serif;
   --font-playfair: "Playfair Display", serif;
 }
 
+@layer base {
+  :root {
+    --background: hsl(240 6% 4%);
+    --foreground: hsl(0 0% 98%);
+    --card: hsl(240 6% 10%);
+  }
+}
+
 @theme inline {
+  --color-muted: hsl(220 10% 46%);
+  --color-hero-pricing-foreground: hsl(0 0% 100%);
+  --color-muted-pricing-foreground: hsl(215 14% 50%);
+  --color-savings: hsl(152 76% 36%);
+  --color-savings-bg: hsl(148 60% 94%);
+  --color-hero-pricing: hsl(152 60% 28%);
+  --color-muted-pricing: hsl(210 20% 96%);
+  --color-pricing-card: hsl(0 0% 100%);
+  --muted-foreground: hsl(220 10% 46%);
+  --color-hero: hsl(240 6% 6%);
+  --color-card: hsl(240 6% 10%);
+  --accent: hsl(217 91% 60%);
   --color-background: var(--background);
   --color-title-hero: var(--title-hero);
   --color-foreground: var(--foreground);
@@ -18,8 +34,14 @@
   --font-mono: var(--font-geist-mono);
   --font-crimson: var(--font-crimson);
   --font-playfair: var(--font-playfair);
-  --color-hero: var(--hero);
   --h-18: 72px;
+}
+
+@layer utilities {
+  .gradient-mask-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
 }
 
 body {
@@ -42,4 +64,8 @@ html {
       transparent 40%
     );
   background-blend-mode: normal, multiply, lighten;
+}
+
+.bg-gradient-accent {
+  background-image: linear-gradient(135deg, hsl(217 91% 60%), hsl(187 94% 43%));
 }
