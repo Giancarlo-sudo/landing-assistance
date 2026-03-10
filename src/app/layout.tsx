@@ -23,7 +23,7 @@ const geistInter = Inter({
 export const metadata: Metadata = {
   // Meta tags básicos
   title: {
-    default: "Kaia - Sistema de Asistencias | Control de Personal Inteligente",
+    default: "Kaia | Gestión de Asistencias",
     template: "%s | Kaia",
   },
   description:
@@ -145,7 +145,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 telephone: "+51922929616",
                 contactType: "sales",
-                email: "nazareno@in-order.com.pe",
+                email: "info@kaia.com.pe",
                 areaServed: "PE",
                 availableLanguage: ["es"],
               },
