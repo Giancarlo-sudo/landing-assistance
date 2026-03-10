@@ -1,22 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPinCheck, MapPinCheckInside } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#212020] text-gray-300">
+    <footer className="w-full bg-hero text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Image
-                src="/image/logo/logo.webp"
+                src="/image/logo/kaia-logo-white.png"
                 alt="Kaia Logo"
                 width={40}
                 height={40}
-                className="w-10 h-10"
+                className="w-auto h-8"
               />
             </div>
             <p className="text-sm leading-relaxed">
@@ -147,10 +147,10 @@ export const Footer = () => {
                 </div>
 
                 <a
-                  href="mailto:nazareno@in-order.com.pe"
+                  href="mailto:info@kaia.com.pe"
                   className="hover:text-white transition-colors h-full my-auto"
                 >
-                  nazareno@in-order.com.pe
+                  info@kaia.com.pe
                 </a>
               </li>
               <li className="flex items-start gap-3">

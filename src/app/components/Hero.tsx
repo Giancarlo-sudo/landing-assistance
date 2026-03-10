@@ -31,7 +31,7 @@ export const Hero = () => {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-8 text-center my-16  ">
+      <div className="container relative z-10 mx-auto px-6 lg:px-8 text-center my-24">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}

@@ -173,7 +173,7 @@ export const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#333333] text-white py-3.5 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-hero text-white py-3.5 px-6 rounded-full font-medium hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -209,10 +209,10 @@ export const ContactForm = () => {
                     <div className="text-sm flex flex-col h-full justify-center gap-0.5">
                       <p className="font-medium text-gray-900">Email</p>
                       <a
-                        href="mailto:nazareno@in-order.com.pe"
+                        href="mailto:info@kaia.com.pe"
                         className="text-gray-900"
                       >
-                        nazareno@in-order.com.pe
+                        info@kaia.com.pe
                       </a>
                     </div>
                   </div>
